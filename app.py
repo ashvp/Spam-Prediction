@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 import joblib
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 model = joblib.load('phishing_predictor.pkl')
 vectorizer = joblib.load('tfidf_vectorizer.pkl')
